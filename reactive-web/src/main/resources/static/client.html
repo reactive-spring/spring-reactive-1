@@ -1,10 +1,16 @@
 <html>
+it's webapp
 <body onload="run()">
 	<script type="text/javascript">
 		function run() {
+			console.log("status: " + "run");
+
 			var ws = new WebSocket("ws://localhost:8080/ws/hello");
+
 			ws.onmessage = function(msg) {
-				console.log("message: " + msg.data.toString());
+				console.log("message: " + msg.data.toString() + "<br>");
+				document.write("Async received: " + msg.data.toString() + "<br>");
+
 			}
 		}
 	</script>

@@ -30,6 +30,11 @@ public class CallPersonUsingWebClient_Step3 {
 
 		Mono.when(list).block();
 
+		//https://stackoverflow.com/questions/47179937/how-to-get-string-from-monostring-in-reactive-java
+		//list.forEach(   e-> System.out.println("Received:"+ e.block().toString() ));
+
+		//list.forEach(   e-> System.out.println("Received:"+ e.flatMap(String::toString) ));
+
 		logTime(start);
 	}
 
